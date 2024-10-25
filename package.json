@@ -7,9 +7,9 @@
   "author": "Patrick Hochstenbach <Patrick.Hochstenbach@UGent.be>",
   "license": "MIT",
   "scripts": {
-    "real-clean": "rm accepted/*"
+    "real-clean": "rm -rf accepted/*"
   },
   "dependencies": {
-    "mastodon-cli": "^1.1.0"
+    "mastodon-cli": "^1.1.1"
   }
 }
