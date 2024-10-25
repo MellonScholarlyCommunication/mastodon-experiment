@@ -1,0 +1,15 @@
+{
+  "name": "mastodon-experiment",
+  "version": "1.0.0",
+  "description": "A scalability experiment for mastodon-cli",
+  "main": "index.js",
+  "repository": "https://github.com/MellonScholarlyCommunication/mastodon-experiment",
+  "author": "Patrick Hochstenbach <Patrick.Hochstenbach@UGent.be>",
+  "license": "MIT",
+  "scripts": {
+    "real-clean": "rm accepted/*"
+  },
+  "dependencies": {
+    "mastodon-cli": "^1.1.0"
+  }
+}
