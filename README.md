@@ -29,6 +29,7 @@ $ npx mastodon-cli account --url https://mathstodon.xyz hochstenbach | jq '.id'
 ## Set a demonstrator researcher profile page
 
 ```
+export DEMO_MODE=NO_TOOTS
 export DEMO_PROFILE=https://wiki.mycontributions.info/en/researcher/orcid/0000-0000-0000-0010
 ```
 
