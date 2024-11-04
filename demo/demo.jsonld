@@ -1,0 +1,33 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "urn:uuid:e5a05d1c-7c49-4519-a64d-da51697c722a",
+  "type": "Announce",
+  "actor": {
+    "id": "https://w3c.social/@hvdsomp",
+    "name": "herbert",
+    "inbox": "https://w3c.social/users/hvdsomp/inbox",
+    "type": "Person"
+  },
+  "origin": {
+    "id": "https://mycontributions.info/service/m/profile/card#me",
+    "name": "Mastodon client",
+    "inbox": "https://mycontributions.info/service/m/inbox/",
+    "type": "Service"
+  },
+  "object": {
+    "id": "https://w3c.social/@hvdsomp/111761413441014658",
+    "content": "<p>PJ Harvey - I inside the old year dying <a href=\"https://pjharvey.bandcamp.com/album/i-inside-the-old-year-dying\" target=\"_blank\" rel=\"nofollow noopener noreferrer\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">pjharvey.bandcamp.com/album/i-</span><span class=\"invisible\">inside-the-old-year-dying</span></a></p>",
+    "url": [
+      {
+        "type": "Link",
+        "href": "https://pjharvey.bandcamp.com/album/i-inside-the-old-year-dying"
+      }
+    ],
+    "type": "Note"
+  },
+  "generator": {
+    "id": "https://www.npmjs.com/package/mastodon-cli",
+    "type": "Application",
+    "context": "https://w3c.social/@hvdsomp/111761413441014658"
+  }
+}
