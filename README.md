@@ -76,6 +76,20 @@ pm2 ps
 pm2 logs exp-accepted
 ```
 
+## Statistics
+
+Number of processed toots:
+
+```
+npx eventlog-server summary | grep Announce | wc 
+```
+
+Number of failed notifications:
+
+```
+ls ../mastodon-bot/error/ | wc
+```
+
 ## Stop the daemons
 
 ```
