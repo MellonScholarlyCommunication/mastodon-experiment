@@ -10,10 +10,7 @@
     "real-clean": "rm -rf accepted/*",
     "fetch-all": "./bin/fetch_all.sh",
     "demo": "cp ./demo/demo.jsonld ../mastodon-bot/accepted",
-    "run-experiment": "find ./accepted -type f -name \"*jsonld*\" -exec mv {} ../mastodon-bot/accepted \\;",
-    "bot-accepted": "cd ../mastodon-bot && LOG4JS=info npx ldn-inbox-server handler ./accepted --config ./config/accepted_config.json5 -hn @handler/notification_handler/multi.js --loop",
-    "bot-inbox": "cd ../mastodon-bot && LOG4JS=info npx ldn-inbox-server handler @inbox -hn @handler/notification_handler/multi.js --loop",
-    "box-outbox": "cd ../mastodon-bot && LOG4JS=info npx ldn-inbox-server handler @outbox -hn @handler/notification_handler/multi.js --loop"
+    "run-experiment": "find ./accepted -type f -name \"*jsonld*\" -exec mv {} ../mastodon-bot/accepted \\;"
   },
   "dependencies": {
     "mastodon-cli": "^1.1.2"

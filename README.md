@@ -43,23 +43,14 @@ npx eventlog-server export > ./export-2024-11-04.json
 #### Import a cache database export
 
 ```
+npx eventlog-server remove-all
 npx eventlog-server import ./export-2024-11-04.json
 ```
 
-## Start the demos
-
-In three separate windows start the `bot-accepted`, `bot-inbox` and `bot-outbox` handlers:
+## Start the daemons
 
 ```
-yarn bot-accepted
-```
-
-```
-yarn bot-inbox
-```
-
-```
-yarn bot-outbox
+pm2 start ecosystem.config.js
 ```
 
 ## Fetch toots for the configured accounts
@@ -72,6 +63,22 @@ yarn fetch-all
 
 ```
 yarn run-experiment
+```
+
+## Monitor the daemons
+
+```
+pm2 ps
+```
+
+```
+pm2 logs exp-accepted
+```
+
+## Stop the daemons
+
+```
+pm2 stop ecosystem.config.js
 ```
 
 ## Clean all
