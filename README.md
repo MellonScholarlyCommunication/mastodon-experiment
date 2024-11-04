@@ -73,3 +73,15 @@ yarn fetch-all
 ```
 yarn run-experiment
 ```
+
+## Clean all
+
+```
+yarn real-clean
+```
+
+Optional clean the cache database
+
+```
+npx eventlog-server remove-all
+```
