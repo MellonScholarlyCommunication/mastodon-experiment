@@ -26,9 +26,7 @@ module.exports = {
      },
      {
       name   : "exp-outbox",
-      script : "cd ../mastodon-bot ; LOG4JS=info npx ldn-inbox-server handler @outbox -hn @handler/notification_handler/multi.js" ,
-      cron: '*/1 * * * *',
-      autorestart: false,
+      script : "cd ../mastodon-bot ; LOG4JS=info npx ldn-inbox-server handler @outbox -hn @handler/notification_handler/multi.js --loop" ,
       env: {
         DEMO_MODE: 'NO_TOOTS',
         DEMO_PROFILE: 'https://wiki.mycontributions.info/en/researcher/orcid/0000-0000-0000-0010'
