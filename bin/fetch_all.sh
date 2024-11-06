@@ -1,5 +1,7 @@
 #!/bin/bash
 
+MAX_COUNT_PER_ACCOUNT=20
+
 function fetch {
     LAST_ID=$(ls ./accepted/$2/*.jsonld | head -1 | sed -e 's/.*\///' | sed -e 's/-.*.jsonld//')
     while true; do
@@ -8,7 +10,18 @@ function fetch {
         else
             npx mastodon-cli fetch --older $LAST_ID --url $1 --account $2 --limit 50 --inbox ./accepted/$2 
         fi
-    
+
+        # Count
+        COUNT=$(ls ./accepted/$2/*.jsonld | wc -l)
+
+        if [ $COUNT -ge $MAX_COUNT_PER_ACCOUNT ]; then
+            LEFT=$(($COUNT - $MAX_COUNT_PER_ACCOUNT))
+            if [ $LEFT -gt 0 ]; then
+                ls ./accepted/$2/*.jsonld | tail -$LEFT | xargs -n 1 rm
+            fi
+            break
+        fi
+
         ID=$(ls ./accepted/$2/*.jsonld | head -1 | sed -e 's/.*\///' | sed -e 's/-.*.jsonld//')
 
         if [ "${ID}" == "${LAST_ID}" ]; then
@@ -20,6 +33,8 @@ function fetch {
         echo "next page > ${LAST_ID}..."
         sleep 2
     done
+
+    rm ./accepted/$2/*.meta
 }
 
 while IFS= read -r line || [[ -n "$line" ]]; do
