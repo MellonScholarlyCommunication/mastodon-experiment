@@ -10,4 +10,4 @@ npx eventlog-server list -qp "type=Reject" | wc -l
 
 echo "Failed toot URLs + reason:"
 
-npx eventlog-server export -qp "type=Reject" | jq -r '.data.object.object.id + " => " + .data.object.summary'
+npx eventlog-server export -qp "type=Reject" | jq -r '.data.object.object.id + " => " + .data.summary'
