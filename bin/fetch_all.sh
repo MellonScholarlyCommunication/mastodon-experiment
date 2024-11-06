@@ -23,6 +23,7 @@ function fetch {
 }
 
 while IFS= read -r line || [[ -n "$line" ]]; do
+    [[ "$line" =~ ^# ]] && continue
     URL=${line%;*}
     ACCOUNT=${line##*;}
     echo "${ACCOUNT}@${URL}..."
