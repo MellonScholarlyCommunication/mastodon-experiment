@@ -20,14 +20,16 @@ async function test_fetch(url) {
         const res = await fetch(url);
 
         if (! res.ok) {
-            console.log(`FAILED - HTTP error code: ${res.status}`);
+            console.log(`${url} : FAILED - HTTP ${res.status}`);
             process.exit(2);
         }
+
+        console.log(`${url} : OK - HTTP ${res.status}`);
 
         return await res.text();
     }
     catch (e) {
-        console.log("FAILED - fetch crashed");
+        console.log(`${url} : FAILED - fetch crashed`);
         process.exit(2);
     }
 }
