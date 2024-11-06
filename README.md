@@ -78,22 +78,8 @@ pm2 logs exp-accepted
 
 ## Statistics
 
-Number of processed toots:
-
 ```
-yarn -s event-admin list -qp "generator.id=https://www.npmjs.com/package/mastodon-cli" | wc -l
-```
-
-Number of failed notifications:
-
-```
-yarn -s event-admin list -qp "type=Reject" | wc -l
-```
-
-View failed URLs:
-
-```
-yarn -s event-admin export -qp "type=Reject" | jq ".data.object.object.id"
+./bin/stats.sh
 ```
 
 ## Stop the daemons

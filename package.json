@@ -10,7 +10,7 @@
     "real-clean": "rm -rf accepted/*",
     "fetch-all": "./bin/fetch_all.sh",
     "demo": "cp ./demo/demo.jsonld ../mastodon-bot/accepted",
-    "event-admin": "npx eventlog-server",
+    "cache-admin": "npx eventlog-server",
     "run-experiment": "find ./accepted -type f -name \"*jsonld*\" -exec mv {} ../mastodon-bot/accepted \\;"
   },
   "dependencies": {
