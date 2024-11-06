@@ -81,13 +81,19 @@ pm2 logs exp-accepted
 Number of processed toots:
 
 ```
-npx eventlog-server summary | grep Announce | wc 
+yarn -s event-admin list -qp "generator.id=https://www.npmjs.com/package/mastodon-cli" | wc -l
 ```
 
 Number of failed notifications:
 
 ```
-ls ../mastodon-bot/error/ | wc
+yarn -s event-admin list -qp "type=Reject" | wc -l
+```
+
+View failed URLs:
+
+```
+yarn -s event-admin export -qp "type=Reject" | jq ".data.object.object.id"
 ```
 
 ## Stop the daemons
