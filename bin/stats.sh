@@ -13,8 +13,3 @@ echo
 echo "[Failed toot URLs + reason]"
 
 npx eventlog-server export -qp "type=Reject" | jq -r '.data.object.object.id + " => " + .data.summary'
-
-echo
-echo "[Testing failed toots]"
-
-npx eventlog-server export -qp "type=Reject" | jq -r '.data.object.object.id' | xargs -n 1 ./bin/link_test.js
