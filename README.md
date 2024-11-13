@@ -67,6 +67,12 @@ yarn fetch-all
 yarn run-experiment
 ```
 
+or run the experiment only on one file
+
+```
+yarn run-one
+```
+
 ## Monitor the daemons
 
 ```

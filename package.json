@@ -11,7 +11,8 @@
     "fetch-all": "./bin/fetch_all.sh",
     "demo": "cp ./demo/demo.jsonld ../mastodon-bot/accepted",
     "cache-admin": "npx eventlog-server",
-    "run-experiment": "find ./accepted -type f -name \"*jsonld*\" -exec mv {} ../mastodon-bot/accepted \\;"
+    "run-experiment": "find ./accepted -type f -name \"*jsonld*\" -exec mv {} ../mastodon-bot/accepted \\;",
+    "run-one": "find ./accepted -type f -name \"*jsonld*\" | head -1 | xargs -n 1 -I {} mv {} ../mastodon-bot/accepted \\;"
   },
   "dependencies": {
     "mastodon-cli": "^1.1.2",
