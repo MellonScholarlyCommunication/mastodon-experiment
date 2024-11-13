@@ -3,3 +3,5 @@ node_modules
 .nvmrc
 accepted
 config/accounts.txt
+.wiki.output
+.wiki.update

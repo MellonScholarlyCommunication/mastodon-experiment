@@ -5,6 +5,7 @@
 ```
 yarn install
 npm link eventlog-server
+npm link wikijs-cli
 ```
 
 We assume a working installation of [mastodon-bot](https://github.com/MellonScholarlyCommunication/mastodon-bot) is available at the path `../mastodon-bot`.
@@ -98,4 +99,10 @@ Optional clean the cache database
 
 ```
 npx eventlog-server remove-all
+```
+
+Clean the wiki page of the DEMO_PROFILE too:
+
+```
+./bin/clean_wiki.sh
 ```
