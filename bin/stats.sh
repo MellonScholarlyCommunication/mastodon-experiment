@@ -20,7 +20,7 @@ rm ${TMP}
 echo
 echo "[Number of successfull toot URLs]"
 
-npx eventlog-server export -qp "actor.id=https://wiki.mycontributions.info/profile/card#me" | jq -r ".data | select(.type == \"Announce\") | .object" | wc -l
+npx eventlog-server export -qp "actor.id=https://wiki.mycontributions.info/profile/card#me" | jq -r ".data | select(.type == \"Announce\") | .object.url" | wc -l
 
 echo
 echo "[Number of failed toots URLs]"
