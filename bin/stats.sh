@@ -15,6 +15,9 @@ cat ${TMP} | wc -l
 URL_UNQ=$(cat ${TMP} | sort -u | wc -l)
 echo "${URL_UNQ} (unique)"
 
+URL_PDF=$(cat ${TMP} | grep "\.pdf$" | wc -l)
+echo "${URL_PDF} (pdf urls, zotero can't process that)"
+
 rm ${TMP}
 
 echo
