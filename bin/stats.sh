@@ -18,6 +18,11 @@ echo "${URL_UNQ} (unique)"
 rm ${TMP}
 
 echo
+echo "[Number of successfull toot URLs]"
+
+npx eventlog-server export -qp "actor.id=https://wiki.mycontributions.info/profile/card#me" | jq -r ".data | select(.type == \"Announce\") | .object" | wc -l
+
+echo
 echo "[Number of failed toots URLs]"
 
 npx eventlog-server list -qp "type=Reject" | wc -l
