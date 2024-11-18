@@ -13,7 +13,7 @@ echo "Last notification: ${DATE2}"
 
 DATE1_S=$(date -d ${DATE1} +%s)
 DATE2_S=$(date -d ${DATE2} +%s)
-DIFF=$(((DATE2_S - DATE1_S)/3600))
+DIFF=$((DATE2_S - DATE1_S))
 echo "Difference: ${DIFF}"
 
 echo
