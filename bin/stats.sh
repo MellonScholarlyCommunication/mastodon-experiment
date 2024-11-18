@@ -11,8 +11,8 @@ DATE2=$(npx eventlog-server get ${LAST_NOTIFICATION} | jq -r ".published")
 echo "       First notification: ${DATE1}"
 echo "       Last notification: ${DATE2}"  
 
-DATE1_S=$(date -d ${FIRST_NOTIFICATION} +%s)
-DATE2_S=$(date -d ${LAST_NOTIFICATION} +%s)
+DATE1_S=$(date -d ${DATE1} +%s)
+DATE2_S=$(date -d ${DATE2} +%s)
 DIFF=$((DATE2_S - DATE2_1))
 echo "       Difference: ${DIFF}"
 
