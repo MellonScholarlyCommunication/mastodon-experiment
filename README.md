@@ -63,11 +63,13 @@ yarn fetch-all
 
 ## Run the experiment
 
+Running the experiment means moving all accepted toots to the mastodon bot environment and starting all handlers to find metadata for the URLs mentioned in the toots and updating the Wiki.js page.
+
 ```
 yarn run-experiment
 ```
 
-or run the experiment only on one file
+We can also test the workflow moving only one file to the mastodon bot environment.
 
 ```
 yarn run-one
