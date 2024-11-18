@@ -18,5 +18,5 @@ fi
 echo "Archiving accepted toots in data/experiment-accepted-${DATE}.zip ..."
 zip -r data/experiment-accepted-${DATE}.zip ./accepted
 
-echo "Now you can run: yarn run-experiment or yarn run-one"
+echo "Now you can run: yarn run-experiment /or/ yarn run-one"
 echo "Doei!"
