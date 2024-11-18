@@ -1,6 +1,7 @@
 #!/bin/bash
 
-MAX_COUNT_PER_ACCOUNT=20
+ACCOUNTS_FILE=./config/accounts.txt
+DEFAULT_MAX_COUNT_PER_ACCOUNT=20
 
 function fetch {
     LAST_ID=$(ls ./accepted/$2/*.jsonld | head -1 | sed -e 's/.*\///' | sed -e 's/-.*.jsonld//')
@@ -37,6 +38,9 @@ function fetch {
     rm ./accepted/$2/*.meta
 }
 
+CMDLINE_MAX=$1
+MAX_COUNT_PER_ACCOUNT=${CMDLINE_MAX:-$DEFAULT_MAX_COUNT_PER_ACCOUNT}
+
 while IFS= read -r line || [[ -n "$line" ]]; do
     [[ "$line" =~ ^# ]] && continue
     URL=${line%;*}
@@ -46,4 +50,4 @@ while IFS= read -r line || [[ -n "$line" ]]; do
         mkdir ./accepted/$ACCOUNT
     fi
     fetch $URL $ACCOUNT    
-done < ./config/accounts.txt
+done < ${ACCOUNTS_FILE}

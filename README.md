@@ -57,8 +57,14 @@ pm2 start ecosystem.config.js
 
 ## Fetch toots for the configured accounts
 
+Fetch some toots for the configured accounts. By default, 20 toots will be gathered per account. Using a `MASTODON_HANDLER` configuration handler we create and count only the toots that reference at least one URL.
+
+The default account file to be processed is `./config/account.txt`.
+
+The values in brackets `[...]` show optional arguments with their default values.
+
 ```
-yarn fetch-all
+yarn fetch-all [max-toots-per-account:-20] [account_file:-./config/accounts.txt]
 ```
 
 ## Run the experiment
