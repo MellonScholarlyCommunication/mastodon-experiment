@@ -49,6 +49,12 @@ echo "[Number of failed toots URLs]"
 npx eventlog-server list -qp "type=Reject" | wc -l
 
 echo
-echo "[Failed toot URLs + reason]"
+echo "[Failed toot URLs reason]"
+
+npx eventlog-server export -qp "type=Reject" | jq -r ".data.summary" | sort | uniq -c | sort -n
+
+echo
+echo "[Failed toot URLs]"
 
 npx eventlog-server export -qp "type=Reject" | jq -r '.data.object.object.id + " => " + .data.summary'
+
