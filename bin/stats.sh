@@ -1,5 +1,22 @@
 #!/bin/bash
 
+echo "[Processing time]"
+
+FIRST_NOTIFICATION=$(npx eventlog-server list --limit 1)
+LAST_NOTIFICATION=$(npx eventlog-server list | tail -1)
+
+DATE1=$(npx eventlog-server get ${FIRST_NOTIFICATION} | jq -r ".published")
+DATE2=$(npx eventlog-server get ${LAST_NOTIFICATION} | jq -r ".published")
+
+echo "       First notification: ${DATE1}"
+echo "       Last notification: ${DATE2}"  
+
+DATE1_S=$(date -d ${FIRST_NOTIFICATION} +%s)
+DATE2_S=$(date -d ${LAST_NOTIFICATION} +%s)
+DIFF=$((DATE2_S - DATE2_1))
+echo "       Difference: ${DIFF}"
+
+echo
 echo "[Number of processed toots]"
 
 npx eventlog-server list -qp "generator.id=https://www.npmjs.com/package/mastodon-cli" | wc -l
