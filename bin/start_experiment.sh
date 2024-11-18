@@ -2,9 +2,7 @@
 
 DATE=$(date -%Y%d%m)
 
-yarn clean-all
-
-npx eventlog-server remove-all
+./bin/clean_experiment.sh
 
 yarn fetch-all
 
@@ -13,5 +11,3 @@ if [ ! -d data ];
 fi
 
 zip -r data/experiment-accepted-${DATE}.zip ./accepted
-
-yarn run-experiment
