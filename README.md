@@ -112,3 +112,9 @@ Clean the wiki page of the DEMO_PROFILE too:
 ```
 ./bin/clean_wiki.sh
 ```
+
+Or do all these steps above:
+
+```
+./bin/clean_experiment.sh
+```
