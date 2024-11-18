@@ -6,6 +6,8 @@ else
     DATE=$(date -%Y%d%m)
 fi
 
+pm2 stop ecosystem.config.js
+
 echo "Exporting cache..."
 npx eventlog-server export > ./data/experiment-export-${DATE}.json
 
