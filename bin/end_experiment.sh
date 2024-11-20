@@ -9,7 +9,10 @@ fi
 pm2 stop ecosystem.config.js
 
 echo "Exporting cache..."
-npx eventlog-server export > ./data/experiment-export-${DATE}.json
+npx eventlog-server --name cache export > ./data/experiment-export-${DATE}.json
+
+echo "Exporting claims..."
+npx eventlog-server --name claims export > ./data/experiment-export-claims-${DATE}.json
 
 echo "Exporting service results..."
 zip -r ./data/experiment-results-${DATE}.zip ../metadata-server/public/result

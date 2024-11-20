@@ -103,25 +103,13 @@ pm2 logs exp-accepted
 pm2 stop ecosystem.config.js
 ```
 
+## Export all experiment data
+
+```
+./bin/end_experiment.sh
+```
+
 ## Clean all
-
-```
-yarn real-clean
-```
-
-Optional clean the cache database
-
-```
-npx eventlog-server remove-all
-```
-
-Clean the wiki page of the DEMO_PROFILE too:
-
-```
-./bin/clean_wiki.sh
-```
-
-Or do all these steps above:
 
 ```
 ./bin/clean_experiment.sh
