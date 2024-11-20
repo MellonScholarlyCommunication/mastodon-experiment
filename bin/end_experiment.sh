@@ -3,7 +3,7 @@
 if [ "$1" != "" ]; then
     DATE=$1
 else
-    DATE=$(date +%Y%d%m)
+    DATE=$(date +%Y%m%d)
 fi
 
 pm2 stop ecosystem.config.js
