@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ACCOUNTS_FILE=./config/accounts.txt
+DEFAULT_ACCOUNT_FILE=./config/accounts.txt
 DEFAULT_MAX_COUNT_PER_ACCOUNT=20
 
 function fetch {
@@ -39,6 +39,9 @@ function fetch {
 }
 
 CMDLINE_MAX=$1
+ACCOUNTS_FILE=$2
+
+ACCOUNTS_FILE=${ACCOUNTS_FILE:-$DEFAULT_ACCOUNT_FILE}
 MAX_COUNT_PER_ACCOUNT=${CMDLINE_MAX:-$DEFAULT_MAX_COUNT_PER_ACCOUNT}
 
 while IFS= read -r line || [[ -n "$line" ]]; do
