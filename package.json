@@ -16,7 +16,7 @@
     "run-one": "find ./accepted -type f -name \"*jsonld*\" | head -1 | xargs -I {} mv {} ../mastodon-bot/accepted"
   },
   "dependencies": {
-    "mastodon-cli": "^1.1.3",
+    "mastodon-cli": "^1.1.6",
     "node-fetch": "2.7.0"
   }
 }
