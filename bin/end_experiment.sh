@@ -17,5 +17,11 @@ npx eventlog-server --name claims export > ./data/experiment-export-claims-${DAT
 echo "Exporting service results..."
 zip -r ./data/experiment-results-${DATE}.zip ../metadata-server/public/result
 
+echo "Exporting wiki page..."
+./bin/wiki_page.sh > experiment-wiki-${DATE}.txt
+
 echo "Exporting stats..."
 ./bin/stats.sh > ./data/experiment-stats-${DATE}.txt
+
+echo "Exporting claim stats..."
+../rdf-generator/stats.sh > ./data/experiment-claim-stats-${DATE}.txt

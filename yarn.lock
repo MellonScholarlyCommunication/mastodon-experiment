@@ -113,20 +113,6 @@ entities@^4.5.0:
   resolved "https://registry.npmjs.org/entities/-/entities-4.5.0.tgz"
   integrity sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==
 
-"eventlog-server@file:../eventlog-server":
-  version "1.0.0"
-  resolved "file:../eventlog-server"
-  dependencies:
-    chalk "2.4.2"
-    commander "^12.1.0"
-    dotenv "^16.4.5"
-    log4js "^6.9.1"
-    md5 "^2.3.0"
-    mellon-server "^1.1.2"
-    node-fetch "2.7.0"
-    postgres "^3.4.4"
-    url "^0.11.4"
-
 events@^3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/events/-/events-3.3.0.tgz"
@@ -500,6 +486,22 @@ whatwg-url@^5.0.0:
   dependencies:
     tr46 "~0.0.3"
     webidl-conversions "^3.0.0"
+
+"wikijs-cli@file:../wikijs-cli":
+  version "1.0.0"
+  resolved "file:../wikijs-cli"
+  dependencies:
+    commander "^12.1.0"
+    dotenv "^16.4.5"
+    graphqurl "^1.0.3"
+    log4js "^6.9.1"
+    marked "4.0.18"
+    n3 "^1.22.3"
+    rdf-parse "2.3.3"
+    rdfa "^0.0.10"
+    string-similarity-js "^2.1.4"
+    string-to-stream "^3.0.1"
+    xmldom "^0.6.0"
 
 ws@*, ws@^8.18.0, ws@8.18.0:
   version "8.18.0"
