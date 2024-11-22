@@ -24,4 +24,4 @@ echo "Exporting stats..."
 ./bin/stats.sh > ./data/experiment-stats-${DATE}.txt
 
 echo "Exporting claim stats..."
-../rdf-generator/stats.sh > ./data/experiment-claim-stats-${DATE}.txt
+(cd ../rdf-generator ; ./stats.sh) > ./data/experiment-claim-stats-${DATE}.txt
