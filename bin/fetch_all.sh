@@ -7,9 +7,9 @@ function fetch {
     LAST_ID=$(ls ./accepted/$2/*.jsonld | head -1 | sed -e 's/.*\///' | sed -e 's/-.*.jsonld//')
     while true; do
         if [ "${LAST_ID}" == "" ]; then
-            npx mastodon-cli fetch --url $1 --account $2 --limit 50 --inbox ./accepted/$2 
+            npx mastodon-cli fetch --account $2 --limit 50 --inbox ./accepted/$2 
         else
-            npx mastodon-cli fetch --older $LAST_ID --url $1 --account $2 --limit 50 --inbox ./accepted/$2 
+            npx mastodon-cli fetch --older $LAST_ID --account $2 --limit 50 --inbox ./accepted/$2 
         fi
 
         # Count
