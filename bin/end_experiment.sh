@@ -25,3 +25,6 @@ echo "Exporting stats..."
 
 echo "Exporting claim stats..."
 (cd ../rdf-generator ; ./stats.sh) > ./data/experiment-claim-stats-${DATE}.txt
+
+echo "Exporting claims db..."
+cp /var/www/html/exports/claims.nq ./data/exportiment-claim-dump-${DATE}.nq
